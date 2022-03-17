@@ -13,8 +13,10 @@ const fetchPokemon = () => {
         console.log(data);
         let pokeImg = data.sprites.front_default;
         pokeImage(pokeImg);
-        let another = data.types;
-        showTypes(another);
+        let pokeTypes = data.types;
+        showTypes(pokeTypes);
+        let pokeStats = data.stats;
+        pokeStat(pokeStats);
     })
 }
 
@@ -23,20 +25,37 @@ const pokeImage = (url) => {
     pokeImg.src = url;
 }
 
-
-const showTypes = (anotherOne) => {
+const showTypes = (pokeTypes) => {
     const pokeType = document.getElementById("types");
     let type = "";
-    let types = anotherOne.length;
+    let types = pokeTypes.length;
     console.log(`This pokemon has ${types} types`);
     console.log(types);
-    for (x in anotherOne) {
-        console.log(anotherOne[x].type.name);
-        type += anotherOne[x].type.name + " ";
+    for (x in pokeTypes) {
+        console.log(pokeTypes[x].type.name);
+        type += pokeTypes[x].type.name + " ";
     }
     console.log(type);
     console.log(typeof type);
     pokeType.innerHTML = type;
+}
+
+const pokeStat = (pokeStats) => {
+    console.log(pokeStats);
+    console.log(typeof pokeStats);
+    const theStats = document.getElementById("stats");
+    let theStat = "";
+    let allStats = "";
+    for (x in pokeStats) {
+        let baseStat = pokeStats[x].base_stat;
+        let aStat = pokeStats[x].stat.name;
+        let mayus = aStat[0].toUpperCase();
+        theStat = aStat.replace(aStat[0], mayus);
+        // br can be removed once styled is added
+        allStats += theStat + ": "+ baseStat + "<br>";
+        console.log(allStats);
+    }
+    theStats.innerHTML = allStats;
 }
 
 // const pokeTypes = (type) => {
