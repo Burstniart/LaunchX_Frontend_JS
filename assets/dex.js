@@ -13,10 +13,6 @@ const fetchPokemon = () => {
         console.log(data);
         let pokeImg = data.sprites.front_default;
         pokeImage(pokeImg);
-        // let pokeType = data.types[0].type.name;
-        // pokeTypes(pokeType);
-        let howMany = data.types.length;
-        thisMany(howMany);
         let another = data.types;
         showTypes(another);
     })
@@ -27,25 +23,34 @@ const pokeImage = (url) => {
     pokeImg.src = url;
 }
 
-// const pokeTypes = (type) => {
-//     const pokeType = document.getElementById('types');
-//     pokeType.innerHTML = type;
-// }
-
-const thisMany = (many) => {
-    console.log(`This pokemon has ${many} types`);
-}
 
 const showTypes = (anotherOne) => {
-    const pokeType = document.getElementById("type");
+    const pokeType = document.getElementById("types");
+    let type = "";
     let types = anotherOne.length;
+    console.log(`This pokemon has ${types} types`);
     console.log(types);
     for (x in anotherOne) {
         console.log(anotherOne[x].type.name);
+        type += anotherOne[x].type.name + " ";
     }
-
-
+    console.log(type);
+    console.log(typeof type);
+    pokeType.innerHTML = type;
 }
+
+// const pokeTypes = (type) => {
+//     const pokeType = document.getElementById('types');
+//     console.log(type);
+//     console.log(typeof type);
+//     pokeType.innerHTML = type;
+// }
+
+// const thisMany = (many) => {
+//     console.log(`This pokemon has ${many} types`);
+// }
+
+
 // pokeImage('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/282.png');
 
 // const print = () => {
