@@ -5,7 +5,8 @@ const fetchPokemon = () => {
     fetch(url).then((res) => {
         if (res.status != 200) {
             console.log(res);
-            pokeImage('./assets/images/pikachuWat.jpg')
+            pokeImage('./assets/images/pikachuWat.jpg');
+            teamRocket();
         } else {
             return res.json();        
         }
@@ -17,6 +18,8 @@ const fetchPokemon = () => {
         showTypes(pokeTypes);
         let pokeStats = data.stats;
         pokeStat(pokeStats);
+        let pokeMoves = data.moves;
+        pokeMove(pokeMoves);
     })
 }
 
@@ -28,21 +31,18 @@ const pokeImage = (url) => {
 const showTypes = (pokeTypes) => {
     const pokeType = document.getElementById("types");
     let type = "";
-    let types = pokeTypes.length;
-    console.log(`This pokemon has ${types} types`);
-    console.log(types);
+    let theType = "";
     for (x in pokeTypes) {
-        console.log(pokeTypes[x].type.name);
-        type += pokeTypes[x].type.name + " ";
+        let aType = pokeTypes[x].type.name;
+        let mayus = aType[0].toUpperCase();
+        theType = aType.replace(aType[0], mayus);
+        type += theType + " ";
     }
-    console.log(type);
-    console.log(typeof type);
     pokeType.innerHTML = type;
+    console.log(type);
 }
 
 const pokeStat = (pokeStats) => {
-    console.log(pokeStats);
-    console.log(typeof pokeStats);
     const theStats = document.getElementById("stats");
     let theStat = "";
     let allStats = "";
@@ -51,29 +51,28 @@ const pokeStat = (pokeStats) => {
         let aStat = pokeStats[x].stat.name;
         let mayus = aStat[0].toUpperCase();
         theStat = aStat.replace(aStat[0], mayus);
-        // br can be removed once styled is added
         allStats += theStat + ": "+ baseStat + "<br>";
-        console.log(allStats);
     }
+    console.log(allStats);
     theStats.innerHTML = allStats;
 }
 
-// const pokeTypes = (type) => {
-//     const pokeType = document.getElementById('types');
-//     console.log(type);
-//     console.log(typeof type);
-//     pokeType.innerHTML = type;
-// }
+const pokeMove = (pokeMoves) => {
+    const theMoves = document.getElementById("moves");
+    let theMove = "";
+    let allMoves = "";
+    for ( x in pokeMoves) {
+        let aMove = pokeMoves[x].move.name;
+        let mayus = aMove[0].toUpperCase();
+        theMove = aMove.replace(aMove[0], mayus);
+        allMoves += theMove + " / ";
+    }
+    allMoves = allMoves.replace(/-/g, " ");
+    allMoves = allMoves.slice(0, -2); 
+    console.log(allMoves);
+    theMoves.innerHTML = allMoves;
+}
 
-// const thisMany = (many) => {
-//     console.log(`This pokemon has ${many} types`);
-// }
-
-
-// pokeImage('https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/282.png');
-
-// const print = () => {
-//     const pokeName = document.getElementById('pokeName');
-//     let pokeInput = pokeName.value;
-//     console.log(`What's up ${pokeInput}!`);
-// }
+const teamRocket = () => {
+    document.getElementById("moves").innerHTML = "Team Rocket took this information!";
+} 

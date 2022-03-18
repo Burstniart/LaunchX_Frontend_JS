@@ -9,15 +9,18 @@
     <link rel="icon" href="./assets/images/pngegg.png">
 </head>
 <body>
-    <h2>Pokedex time baby</h2>
-    <input type="text" id="pokeName" name="pokeName" placeholder="I choose you!">
-    <br>
-    <img id='pokeImg' src="./assets/images/pngegg.png" alt="pokemon" width="100px">
-    <br>
-    <button onclick="fetchPokemon()">Cambiar pokemon</button>
-    <br>
-    <p id="types" name="types">Tipos</p>
-    <p id="stats" name="stats">Stats</p>
+    <img class="pokeLogo" src="./assets/images/pokeLogo.png">
+
+    <div class="display">
+        <input type="text" id="pokeName" name="pokeName" class="pokeName" placeholder="I choose you!">
+        <img id='pokeImg' src="./assets/images/pngegg.png" alt="pokemon" width="350px">
+        <p id="types" name="types"></p>
+        <p id="stats" name="stats"></p>
+        <p id="moves" name="moves"></p>
+        <button onclick="fetchPokemon()">I choose you!</button>
+    </div>
+
+    <img class="pokedex" src="./assets/images/dexBackground.png">
 
 <footer>
     <script src="./assets/dex.js"></script>
