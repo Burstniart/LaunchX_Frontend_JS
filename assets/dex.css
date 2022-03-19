@@ -8,8 +8,8 @@ body {
 .pokeLogo {
     position: absolute;
     top: 0px;
-    left: 50%;
-    width: 60%;
+    left: 380px;
+    width: 100%;
   }
 
   .display {
@@ -21,9 +21,9 @@ body {
   }
 
   .pokeName {
-      position: absolute;
-      top: 0px;
-      left: 30%;
+      position: relative;
+      top: -260px;
+      left: 33%;
       border: 2px solid whitesmoke;
       color: #33343d;
       border-radius: 15%;
@@ -34,8 +34,8 @@ body {
 
   .display button {
       position: absolute;
-      bottom:-10px;
-      left: 35%;
+      bottom: 200px;
+      left: 40%;
       background-color: #499eee; /* Green */
     border: 2px solid whitesmoke;
     color: white;
@@ -46,30 +46,31 @@ body {
   }
   .display img {
       position: absolute;
-      top: 5%;
-      left: 5%;
+      top: -200px;
+      left: 50px;
       display: flex;
   }
   #types {
       position: absolute;
-      top: 7%;
-      right: 20%;
+      top: -200px;
+      right: 10%;
       font-size: 48px;
       font-weight: bold;
       text-align: right;
   }
   #moves {
       position: absolute;
-      left: 4%;
-      bottom: 5%;
+      left: 0px;
+      bottom: 35%;
       font-size: 20px;
+      width: 1000px;
       font-weight: bold;
       text-align: justify;
   }
   #stats {
       position: absolute;
-      top: 20%;
-      right: 20%;
+      top: -100px;
+      right: 10%;
       font-size: 34px;
       font-weight: bold;
       text-align: right;
