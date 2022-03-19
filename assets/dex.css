@@ -1,6 +1,6 @@
 body {
     background-color: #120a42;
-    color:#201517;
+    color:#494242;
     font-size: 14px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -78,7 +78,7 @@ body {
   @media only screen and (min-device-width: 800px) {
     body {
         background-color: #120a42;
-        color:#201517;
+        color:#494242;
         font-size: 28px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
@@ -140,7 +140,7 @@ body {
     #types {
         position: absolute;
       top: 5%;
-      right: 20%;
+      right: 10%;
       font-size: 32px;
       font-weight: bold;
       text-align: right;
@@ -148,7 +148,7 @@ body {
     #stats {
         position: absolute;
       top: 17%;
-      right: 20%;
+      right: 10%;
       font-size: 18px;
       font-weight: bold;
       text-align: right;
@@ -160,6 +160,6 @@ body {
         font-size: 11px;
         font-weight: bold;
         text-align: justify;
-        width: 500px;
+        width: 460px;
     }
   }
